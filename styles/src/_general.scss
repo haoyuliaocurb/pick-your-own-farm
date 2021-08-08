@@ -1,0 +1,42 @@
+@use "library" as lib;
+
+/* Font */
+%f_stack {
+    font-family: Noto Sans TC;
+    font-style: normal;
+    text-align: justify;
+}
+
+/* Color */
+$belge: #fff5ec;
+$red: #d0362c;
+
+/* Font */
+
+h1 {
+  font-size: 37px;
+}
+
+h2 {
+  font-size: 27px;
+}
+
+.titlePhotoWall {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.titleSubWelcoming {
+  font-size: 16px;
+}
+
+.titleInput {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+}
