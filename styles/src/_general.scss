@@ -1,24 +1,39 @@
 @use "library" as lib;
-
-/* Font */
-%f_stack {
-    font-family: Noto Sans TC;
-    font-style: normal;
-    text-align: justify;
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+/* Layout */
+%contentPaddingHor {
+  padding: 0 6%;
 }
 
 /* Color */
-$belge: #fff5ec;
+$beige: #fff5ec;
 $red: #d0362c;
+$black: #1E1E1E;
 
 /* Font */
 
+%fontStack {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  text-align: center;
+  font-weight: 300;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+  @extend %fontStack;
+}
+
 h1 {
   font-size: 37px;
+  font-weight: 600;
 }
 
 h2 {
   font-size: 27px;
+  font-weight: 600;
 }
 
 .titlePhotoWall {
@@ -27,6 +42,7 @@ h2 {
 
 h3 {
   font-size: 20px;
+  font-weight: 600;
 }
 
 .titleSubWelcoming {
@@ -39,4 +55,14 @@ h3 {
 
 p {
   font-size: 14px;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+button {
+  border: none;
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  color: $beige;
 }
