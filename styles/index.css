@@ -42,9 +42,10 @@ html {
 .welcoming, .introduction .service > .content, .introduction .intro > .content, .photoWall, .contact, footer {
   padding: 0 6%;
 }
-
-.contact > .blockLogo {
-  margin: 0 6%;
+@media (min-width: 800px) {
+  .welcoming, .introduction .service > .content, .introduction .intro > .content, .photoWall, .contact, footer {
+    padding: 0 60px;
+  }
 }
 
 /* Color */
@@ -64,6 +65,11 @@ h1, h2, h3, p {
 h1 {
   font-size: 37px;
   font-weight: 600;
+}
+@media (min-width: 800px) {
+  h1 {
+    font-size: 57px;
+  }
 }
 
 h2 {
@@ -95,11 +101,19 @@ p {
 }
 
 button {
+  font-size: 14px;
   border: none;
   display: inline-block;
   width: 100%;
+  max-width: 320px;
   height: 50px;
   color: #fff5ec;
+}
+@media (min-width: 800px) {
+  button {
+    width: 160px;
+    max-width: none;
+  }
 }
 
 body {
@@ -129,6 +143,10 @@ body > * {
   border-bottom: #1E1E1E solid 1px;
   display: flex;
   padding: 12px 0;
+  overflow: hidden;
+}
+.welcoming > nav > * {
+  flex-shrink: 0;
 }
 .welcoming > nav > img {
   width: 36px;
@@ -137,12 +155,60 @@ body > * {
 }
 .welcoming > nav > p {
   font-size: 16px;
+  width: 160px;
   font-family: "Suez One", serif;
   display: flex;
   align-items: center;
   margin-left: 14px;
 }
-.welcoming > nav > button {
+.welcoming > nav > .navItem {
+  background-color: transparent;
+  width: auto;
+  height: 100%;
+  color: #1E1E1E;
+  margin-left: 20px;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+@media (min-width: 800px) {
+  .welcoming > nav > .navItem {
+    opacity: 1;
+  }
+}
+.welcoming > nav > .navItem:first-of-type {
+  margin-left: 40px;
+}
+.welcoming > nav > .buttonLogIn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  background-color: transparent;
+  width: 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+@media (min-width: 800px) {
+  .welcoming > nav > .buttonLogIn {
+    opacity: 1;
+  }
+}
+.welcoming > nav > .buttonLogIn > svg {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+}
+.welcoming > nav > .buttonLogIn > p {
+  display: inline-block;
+  color: #1E1E1E;
+}
+.welcoming > nav > .buttonMenu {
   background-color: transparent;
   padding: 0;
   position: absolute;
@@ -155,8 +221,14 @@ body > * {
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
+  transition: opacity 0.3s;
 }
-.welcoming > nav > button > span {
+@media (min-width: 800px) {
+  .welcoming > nav > .buttonMenu {
+    opacity: 0;
+  }
+}
+.welcoming > nav > .buttonMenu > span {
   display: inline-block;
   width: 100%;
   height: 1px;
@@ -169,12 +241,39 @@ body > * {
   color: #d0362c;
   text-align: center;
 }
-.welcoming > .titleSubWelcoming {
+@media (min-width: 800px) {
+  .welcoming > h1 {
+    text-align: left;
+  }
+}
+.welcoming > .groupTitleSubNButton {
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 800px) {
+  .welcoming > .groupTitleSubNButton {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .welcoming > .groupTitleSubNButton > * {
+    flex-shrink: 0;
+  }
+}
+.welcoming > .groupTitleSubNButton > .titleSubWelcoming {
   text-align: center;
   margin-top: 20px;
   color: #1E1E1E;
 }
-.welcoming > .buttonSet {
+@media (min-width: 800px) {
+  .welcoming > .groupTitleSubNButton > .titleSubWelcoming {
+    text-align: left;
+    position: absolute;
+    left: 0;
+  }
+}
+.welcoming > .groupTitleSubNButton > .buttonSet {
   width: 100%;
   height: 32px;
   margin-top: 16px;
@@ -182,34 +281,75 @@ body > * {
   align-items: center;
   justify-content: center;
 }
-.welcoming > .buttonSet > img {
+@media (min-width: 800px) {
+  .welcoming > .groupTitleSubNButton > .buttonSet {
+    width: 160px;
+  }
+}
+.welcoming > .groupTitleSubNButton > .buttonSet > img {
   width: 20px;
   height: 20px;
   object-fit: cover;
 }
-.welcoming > .buttonSet > :not(:first-child) {
+.welcoming > .groupTitleSubNButton > .buttonSet > :not(:first-child) {
   margin-left: 24px;
 }
-.welcoming > button {
+.welcoming > .groupTitleSubNButton > button {
+  position: relative;
+  left: calc(( 100% - 320px ) / 2);
   margin-top: 20px;
   background-color: #d0362c;
+}
+@media (min-width: 800px) {
+  .welcoming > .groupTitleSubNButton > button {
+    left: 0;
+  }
 }
 .welcoming > .carousel {
   margin-top: 20px;
   height: 240px;
+}
+@media (min-width: 800px) {
+  .welcoming > .carousel {
+    margin-top: 40px;
+    height: 500px;
+  }
 }
 .welcoming > .carousel > img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
-.welcoming > h2 {
-  margin-top: 28px;
+.welcoming > .content {
+  position: relative;
+  padding-top: 28px;
+}
+@media (min-width: 800px) {
+  .welcoming > .content {
+    padding-top: 60px;
+    width: 560px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+  }
+}
+.welcoming > .content > h2 {
   color: #fff5ec;
 }
-.welcoming > p {
-  margin-top: 28px;
+@media (min-width: 800px) {
+  .welcoming > .content > h2 {
+    position: absolute;
+    left: 0;
+    width: 60px;
+  }
+}
+.welcoming > .content > p {
   color: #fff5ec;
+}
+@media (min-width: 800px) {
+  .welcoming > .content > p {
+    width: 320px;
+  }
 }
 .welcoming > .backgroundTop {
   position: absolute;
@@ -246,6 +386,19 @@ body > * {
 .introduction .tag * {
   fill: #fff5ec;
 }
+.introduction .blockervice {
+  display: block;
+}
+@media (min-width: 800px) {
+  .introduction .blockervice {
+    padding: 0 6%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .introduction .blockervice > * {
+    flex-shrink: 0;
+  }
+}
 .introduction .service {
   position: relative;
   background-color: #d0362c;
@@ -263,8 +416,41 @@ body > * {
   color: #fff5ec;
 }
 .introduction .service > .content > button {
+  position: relative;
+  left: calc((100% - 320px) / 2);
   background-color: #1E1E1E;
   margin-top: 20px;
+}
+@media (min-width: 800px) {
+  .introduction .service > .content > button {
+    left: 0;
+  }
+}
+@media (min-width: 800px) {
+  .introduction .service:not(.bakery) {
+    width: 48%;
+    position: relative;
+    top: -60px;
+    background-color: transparent;
+    border-left: #d0362c 6px solid;
+    margin-left: 4%;
+  }
+  .introduction .service:not(.bakery) > img {
+    border: none;
+  }
+  .introduction .service:not(.bakery) > .tag {
+    top: -76px;
+    left: -6px;
+  }
+  .introduction .service:not(.bakery) > .content {
+    color: #1E1E1E;
+  }
+  .introduction .service:not(.bakery) > .content > h3 {
+    text-align: left;
+  }
+}
+.introduction .service:first-of-type:not(.bakery) {
+  margin-left: 0;
 }
 .introduction .intro {
   position: relative;
@@ -278,9 +464,27 @@ body > * {
   background-color: rgba(0, 0, 0, 0.6);
   background-size: cover;
 }
+@media (min-width: 800px) {
+  .introduction .intro {
+    height: 660px;
+  }
+}
 .introduction .intro > .content {
-  position: absolute;
   color: #fff5ec;
+}
+@media (min-width: 800px) {
+  .introduction .intro > .content {
+    position: absolute;
+    top: 0;
+    bottom: 100px;
+    left: 0;
+    margin: auto 0;
+    width: 580px;
+    height: 240px;
+  }
+}
+.introduction .intro > .content > h2 {
+  text-align: left;
 }
 .introduction .bakery {
   position: relative;
@@ -295,9 +499,27 @@ body > * {
   background-size: cover;
   border-left: #d0362c 6px solid;
 }
+@media (min-width: 800px) {
+  .introduction .bakery {
+    margin-top: 70px;
+  }
+  .introduction .bakery > .tag {
+    top: -76px;
+    left: -6px;
+  }
+}
 .introduction .bakery > .content {
-  position: absolute;
   margin-top: 0;
+}
+@media (min-width: 800px) {
+  .introduction .bakery > .content {
+    position: absolute;
+    left: 50px;
+    width: 600px;
+  }
+  .introduction .bakery > .content > h3 {
+    text-align: left;
+  }
 }
 
 .photoWall {
@@ -305,6 +527,11 @@ body > * {
   padding-top: 30px;
   padding-bottom: 80px;
   background-color: #fff5ec;
+}
+@media (min-width: 800px) {
+  .photoWall {
+    padding-top: 80px;
+  }
 }
 .photoWall > h2 {
   color: #d0362c;
@@ -324,18 +551,48 @@ body > * {
   object-fit: cover;
   margin-top: 6%;
 }
-.photoWall > .blockImg > img:nth-of-type(even) {
-  margin-left: 6%;
+@media (min-width: 800px) {
+  .photoWall > .blockImg > img {
+    width: 19%;
+    height: 19%;
+    margin-top: 1%;
+    margin-left: 1%;
+  }
+}
+@media (min-width: 460px) and (max-width: 800px) {
+  .photoWall > .blockImg > img {
+    width: 30%;
+    height: 30%;
+    margin-left: 5%;
+  }
+}
+@media (max-width: calc(460px - 1px)) {
+  .photoWall > .blockImg > img:nth-of-type(even) {
+    margin-left: 6%;
+  }
+}
+@media (min-width: 800px) {
+  .photoWall > .blockImg > img:nth-of-type(5n+1) {
+    margin-left: 0;
+  }
+}
+@media (min-width: 460px) and (max-width: 800px) {
+  .photoWall > .blockImg > img:nth-of-type(3n+1) {
+    margin-left: 0;
+  }
 }
 
 .contact {
+  position: relative;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 60px;
   background-color: #1E1E1E;
 }
-.contact > :not(.blockLogo) {
-  margin-top: 30px;
+@media (min-width: 800px) {
+  .contact {
+    padding-top: 60px;
+  }
 }
 .contact > .blockLogo {
   display: flex;
@@ -345,10 +602,20 @@ body > * {
   border-bottom: #fff5ec 1px solid;
   padding-bottom: 24px;
 }
+@media (min-width: 800px) {
+  .contact > .blockLogo {
+    justify-content: flex-start;
+  }
+}
 .contact > .blockLogo > .svg {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+@media (min-width: 800px) {
+  .contact > .blockLogo > .svg {
+    width: 36px;
+  }
 }
 .contact > .blockLogo > .svg > svg {
   width: 36px;
@@ -365,39 +632,126 @@ body > * {
   margin-top: 14px;
   color: #fff5ec;
 }
-.contact > .unitContact {
+@media (min-width: 800px) {
+  .contact > .blockLogo > p {
+    margin-top: 0;
+    margin-left: 14px;
+  }
+}
+.contact > .groupUnitContact {
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 800px) {
+  .contact > .groupUnitContact {
+    display: flex;
+    height: 500px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+  .contact > .groupUnitContact > * {
+    flex-shrink: 0;
+  }
+}
+.contact > .groupUnitContact .unitContact {
+  position: relative;
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 30px;
 }
-.contact > .unitContact > * {
+@media (min-width: 800px) {
+  .contact > .groupUnitContact .unitContact {
+    min-width: 200px;
+    width: 30%;
+    max-width: 300px;
+  }
+  .contact > .groupUnitContact .unitContact h3, .contact > .groupUnitContact .unitContact p, .contact > .groupUnitContact .unitContact span {
+    text-align: left;
+  }
+}
+.contact > .groupUnitContact .unitContact > * {
   flex-shrink: 0;
   width: 100%;
   color: #fff5ec;
 }
-.contact > .unitContact > p {
+.contact > .groupUnitContact .unitContact > p {
   text-align: center;
 }
-.contact > .unitContact > p > span {
+.contact > .groupUnitContact .unitContact > p > span {
   display: inline-block;
   margin-top: 6px;
   width: 100%;
 }
-.contact > .unitContact > p > span:first-of-type {
+.contact > .groupUnitContact .unitContact > p > span:first-of-type {
   margin-top: 16px;
 }
-.contact > .openingHour > button {
+@media (min-width: 800px) {
+  .contact > .groupUnitContact .absolute2Bottom-lg {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+  }
+  .contact > .groupUnitContact .absolute2Bottom-lg > * {
+    flex-shrink: 0;
+  }
+}
+@media (min-width: 800px) {
+  .contact > .groupUnitContact .button {
+    justify-content: flex-start;
+  }
+}
+.contact > .groupUnitContact .button > button {
   width: 230px;
   color: #1E1E1E;
   background-color: #fff5ec;
   margin-top: 20px;
 }
+@media (min-width: 800px) {
+  .contact > .groupUnitContact .button > button {
+    width: 160px;
+  }
+}
+.contact > .contactUs {
+  margin-top: 30px;
+}
+@media (min-width: 800px) {
+  .contact > .contactUs {
+    position: absolute;
+    z-index: 2;
+    right: 6%;
+    top: 160px;
+    min-width: 300px;
+    width: 30%;
+    max-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .contact > .contactUs > * {
+    flex-shrink: 0;
+  }
+}
 .contact > .contactUs h3 {
+  width: 100%;
   color: #fff5ec;
+}
+@media (min-width: 800px) {
+  .contact > .contactUs h3 {
+    text-align: left;
+  }
 }
 .contact > .contactUs p {
   color: #fff5ec;
   text-align: center;
+}
+@media (min-width: 800px) {
+  .contact > .contactUs p {
+    text-align: left;
+  }
 }
 .contact > .contactUs .mustFilled::after {
   content: "*";
@@ -415,7 +769,13 @@ body > * {
   width: 100%;
   margin-top: 20px;
 }
+@media (min-width: 800px) {
+  .contact > .contactUs > label {
+    width: 48%;
+  }
+}
 .contact > .contactUs > label > input {
+  display: inline-block;
   margin-top: 6px;
   width: 100%;
   height: 30px;
@@ -423,12 +783,33 @@ body > * {
   border-width: 1px;
   border-style: solid;
   background-color: #1E1E1E;
+  color: #fff5ec;
+  padding: 16px;
 }
-.contact > .contactUs > label > .message {
+.contact > .contactUs > label > .inputMessage {
   height: 160px;
+}
+@media (min-width: 800px) {
+  .contact > .contactUs > label > .inputMessage {
+    height: 30px;
+  }
+}
+@media (min-width: 800px) {
+  .contact > .contactUs > .message {
+    width: 100%;
+  }
+}
+.contact > .contactUs > button {
+  width: 100%;
+  max-width: none;
 }
 .contact > .contactUs > label:last-of-type > input {
   border-bottom: none;
+}
+@media (min-width: 800px) {
+  .contact > .contactUs > label:nth-of-type(even):not(.message) {
+    margin-left: 4%;
+  }
 }
 
 footer {
@@ -436,6 +817,14 @@ footer {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #d0362c;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 800px) {
+  footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 footer > .map {
   width: 100%;
@@ -452,8 +841,19 @@ footer > p {
   flex-wrap: wrap;
   color: #fff5ec;
 }
+@media (min-width: 800px) {
+  footer > p {
+    justify-content: center;
+    width: 100%;
+  }
+}
 footer > p > span {
   width: 100%;
+}
+@media (min-width: 800px) {
+  footer > p > span {
+    width: 190px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

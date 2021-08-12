@@ -2,11 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
 /* Layout */
+$breakpoint: '800px';
+$breakpoint-wall: '460px';
+$contentSpacingHorValue-sm: 60px;
+$contentSpacingHorValue-lg: 6%;
 %contentPaddingHor {
-  padding: 0 6%;
+  padding: 0 $contentSpacingHorValue-lg;
+  @media (min-width: $breakpoint) {
+    padding: 0 $contentSpacingHorValue-sm;
+  }
 }
 %contentMarginHor {
-  margin: 0 6%;
+  margin: 0 $contentSpacingHorValue-lg;
+  @media (min-width: $breakpoint) {
+    margin: 0 $contentSpacingHorValue-sm;
+  }
 }
 
 /* Color */
@@ -32,6 +42,9 @@ h1, h2, h3, p {
 h1 {
   font-size: 37px;
   font-weight: 600;
+  @media (min-width: $breakpoint) {
+    font-size: 57px;
+  }
 }
 
 h2 {
@@ -62,10 +75,17 @@ p {
   line-height: 1.5;
 }
 
+$buttonWidth-sm: 320px;
 button {
+  font-size: 14px;
   border: none;
   display: inline-block;
   width: 100%;
+  max-width: $buttonWidth-sm;
   height: 50px;
   color: $beige;
+  @media (min-width: $breakpoint) {
+    width: 160px;
+    max-width: none;
+  }
 }
