@@ -464,6 +464,11 @@ body > * {
   background-color: rgba(0, 0, 0, 0.6);
   background-size: cover;
 }
+@media (min-width: 460px) {
+  .introduction .intro {
+    background-image: url("./images/bg-intro-lg.png");
+  }
+}
 @media (min-width: 800px) {
   .introduction .intro {
     height: 660px;
@@ -502,6 +507,7 @@ body > * {
 @media (min-width: 800px) {
   .introduction .bakery {
     margin-top: 70px;
+    background-image: url("./images/bg-bakery-lg.png");
   }
   .introduction .bakery > .tag {
     top: -76px;

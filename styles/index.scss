@@ -330,6 +330,9 @@ body {
     background-blend-mode: multiply;
     background-color: rgba(0, 0, 0, 0.6);
     background-size: cover;
+    @media (min-width: gen.$breakpoint-wall) {
+      background-image: url("./images/bg-intro-lg.png");
+    }
     @media (min-width: gen.$breakpoint) {
       height: 660px;
     }
@@ -364,6 +367,7 @@ body {
     border-left: gen.$red 6px solid;
     @media (min-width: gen.$breakpoint) {
       margin-top: 70px;
+      background-image: url("./images/bg-bakery-lg.png");
       > .tag {
         top: -76px;
         left: -6px;
