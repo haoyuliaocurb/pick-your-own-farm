@@ -39,8 +39,12 @@ html {
 
 /* Property Mixin */
 /* Layout */
-.welcoming, .introduction .service > .content, .introduction .intro > .content, .photoWall {
+.welcoming, .introduction .service > .content, .introduction .intro > .content, .photoWall, .contact, footer {
   padding: 0 6%;
+}
+
+.contact > .blockLogo {
+  margin: 0 6%;
 }
 
 /* Color */
@@ -137,6 +141,28 @@ body > * {
   display: flex;
   align-items: center;
   margin-left: 14px;
+}
+.welcoming > nav > button {
+  background-color: transparent;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 4px;
+  margin: auto 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.welcoming > nav > button > span {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background-color: #1E1E1E;
+  border-radius: 100px;
+  margin: 1px 0;
 }
 .welcoming > h1 {
   margin-top: 36px;
@@ -300,6 +326,134 @@ body > * {
 }
 .photoWall > .blockImg > img:nth-of-type(even) {
   margin-left: 6%;
+}
+
+.contact {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  background-color: #1E1E1E;
+}
+.contact > :not(.blockLogo) {
+  margin-top: 30px;
+}
+.contact > .blockLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: #fff5ec 1px solid;
+  padding-bottom: 24px;
+}
+.contact > .blockLogo > .svg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.contact > .blockLogo > .svg > svg {
+  width: 36px;
+  height: 36px;
+}
+.contact > .blockLogo > .svg > svg * {
+  fill: #fff5ec;
+}
+.contact > .blockLogo > p {
+  font-size: 16px;
+  font-family: "Suez One", serif;
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+  color: #fff5ec;
+}
+.contact > .unitContact {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact > .unitContact > * {
+  flex-shrink: 0;
+  width: 100%;
+  color: #fff5ec;
+}
+.contact > .unitContact > p {
+  text-align: center;
+}
+.contact > .unitContact > p > span {
+  display: inline-block;
+  margin-top: 6px;
+  width: 100%;
+}
+.contact > .unitContact > p > span:first-of-type {
+  margin-top: 16px;
+}
+.contact > .openingHour > button {
+  width: 230px;
+  color: #1E1E1E;
+  background-color: #fff5ec;
+  margin-top: 20px;
+}
+.contact > .contactUs h3 {
+  color: #fff5ec;
+}
+.contact > .contactUs p {
+  color: #fff5ec;
+  text-align: center;
+}
+.contact > .contactUs .mustFilled::after {
+  content: "*";
+  margin-left: 4px;
+}
+.contact > .contactUs button {
+  border-color: #fff5ec;
+  border-width: 1px;
+  border-style: solid;
+  color: #fff5ec;
+  background-color: #d0362c;
+}
+.contact > .contactUs > label {
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+}
+.contact > .contactUs > label > input {
+  margin-top: 6px;
+  width: 100%;
+  height: 30px;
+  border-color: #fff5ec;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #1E1E1E;
+}
+.contact > .contactUs > label > .message {
+  height: 160px;
+}
+.contact > .contactUs > label:last-of-type > input {
+  border-bottom: none;
+}
+
+footer {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #d0362c;
+}
+footer > .map {
+  width: 100%;
+  height: 400px;
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+}
+footer > p {
+  margin-top: 20px;
+  font-size: 9px;
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  color: #fff5ec;
+}
+footer > p > span {
+  width: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */
