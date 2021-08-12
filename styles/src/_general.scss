@@ -33,7 +33,7 @@ $black: #1E1E1E;
   font-weight: 300;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, p, button {
   margin: 0;
   padding: 0;
   @extend %fontStack;

@@ -214,8 +214,10 @@ body {
       }
     }
     > p {
+      padding-top: 16px;
       color: gen.$beige;
       @media (min-width: gen.$breakpoint) {
+        padding-top: 0;
         width: 320px;
       }
     }    
@@ -366,8 +368,10 @@ body {
     background-size: cover;
     border-left: gen.$red 6px solid;
     @media (min-width: gen.$breakpoint) {
-      margin-top: 70px;
       background-image: url("./images/bg-bakery-lg.png");
+    }    
+    @media (min-width: gen.$breakpoint) {
+      margin-top: 70px;
       > .tag {
         top: -76px;
         left: -6px;

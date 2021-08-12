@@ -50,14 +50,14 @@ html {
 
 /* Color */
 /* Font */
-h1, h2, h3, p {
+h1, h2, h3, p, button {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   text-align: center;
   font-weight: 300;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, p, button {
   margin: 0;
   padding: 0;
 }
@@ -344,10 +344,12 @@ body > * {
   }
 }
 .welcoming > .content > p {
+  padding-top: 16px;
   color: #fff5ec;
 }
 @media (min-width: 800px) {
   .welcoming > .content > p {
+    padding-top: 0;
     width: 320px;
   }
 }
@@ -506,8 +508,12 @@ body > * {
 }
 @media (min-width: 800px) {
   .introduction .bakery {
-    margin-top: 70px;
     background-image: url("./images/bg-bakery-lg.png");
+  }
+}
+@media (min-width: 800px) {
+  .introduction .bakery {
+    margin-top: 70px;
   }
   .introduction .bakery > .tag {
     top: -76px;
